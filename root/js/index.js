@@ -73,7 +73,7 @@ $('#index_main').fullpage({
 	slidesNavigation: true,
 	controlArrows: false,
 	continuousHorizontal:true,
-	scrollingSpeed:1000,
+	
 	showActiveTooltip :true, 
 	anchors: ['hero', 'one', 'two', 'three'],
 	loopHorizontal: true,
@@ -82,6 +82,7 @@ $('#index_main').fullpage({
 			$('header').removeClass('on');
 		}
 		if(index == 2){
+			alert('22')
 			$('header').addClass('on');
 			$('.section2 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
 		}
