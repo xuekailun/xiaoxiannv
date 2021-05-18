@@ -80,9 +80,9 @@ $('#index_main').fullpage({
 	afterLoad: function(anchorLink, index){
 		if(index == 1){
 			$('header').removeClass('on');
+			$("#page2TxtShow").html("")
 		}
 		if(index == 2){
-			alert('22')
 			$('header').addClass('on');
 			$('.section2 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
 			workShow();
