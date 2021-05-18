@@ -85,6 +85,7 @@ $('#index_main').fullpage({
 			alert('22')
 			$('header').addClass('on');
 			$('.section2 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
+			workShow();
 		}
 		if(index == 3){
 			$('header').addClass('on');
@@ -98,3 +99,16 @@ $('#index_main').fullpage({
 	onLeave: function(index, direction){
 	}
 })
+
+function workShow(){
+	var page2Txt = document.getElementById('page2Txt'),
+    page2TxtShow = document.getElementById('page2TxtShow'),
+    i = 0,
+    timer = setInterval(function(){
+    	page2TxtShow.innerHTML = page2Txt.innerHTML.substring(0, i);
+        i++;
+        if(page2TxtShow.innerHTML == page2Txt.innerHTML){
+            clearInterval(timer);
+        };
+    },60);
+}
