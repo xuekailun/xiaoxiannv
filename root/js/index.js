@@ -67,6 +67,8 @@ $(".m_nav .ul li").click(function() {
     $(this).siblings('li').children('.dropdown_menu').slideUp('slow');				
 });
 
+var a = "";
+
 //全屏滚动
 $('#index_main').fullpage({
 	'navigation': true,
@@ -80,9 +82,11 @@ $('#index_main').fullpage({
 	afterLoad: function(anchorLink, index){
 		if(index == 1){
 			$('header').removeClass('on');
-			$("#page2TxtShow").html("")
+			$("#page2TxtShow").html("");
+			a = "1";
 		}
 		if(index == 2){
+			a = "0";
 			$('header').addClass('on');
 			$('.section2 h3').addClass('animated fadeInUp').css('animation-delay', '.1s');
 			workShow();
@@ -101,12 +105,18 @@ $('#index_main').fullpage({
 })
 
 function workShow(){
+	$("#page2TxtShow").html("");
 	var page2Txt = document.getElementById('page2Txt'),
     page2TxtShow = document.getElementById('page2TxtShow'),
     i = 0,
     timer = setInterval(function(){
     	page2TxtShow.innerHTML = page2Txt.innerHTML.substring(0, i);
         i++;
+		
+		if(a == "1"){
+			clearInterval(timer);
+		}
+		
         if(page2TxtShow.innerHTML == page2Txt.innerHTML){
             clearInterval(timer);
         };
