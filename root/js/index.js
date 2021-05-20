@@ -106,7 +106,7 @@ $('#index_main').fullpage({
 
 function workShow(){
 	$("#page2TxtShow").html("");
-	var page2Txt = document.getElementById('page2Txt'),
+	var page2Txt = document.getElementById('page2Txt')
     page2TxtShow = document.getElementById('page2TxtShow'),
     i = 0,
     timer = setInterval(function(){
